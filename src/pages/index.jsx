@@ -1,5 +1,6 @@
 import Input from "@/components/input";
 import UserCard from "@/components/user-card";
+import { setupDevBundler } from "next/dist/server/lib/router-utils/setup-dev-bundler";
 import { useState } from "react";
 
 const profiles = [
@@ -68,6 +69,12 @@ export default function Home() {
     setUsers(findUser);
   };
 
+  const deleteUser = (userId) => {
+    console.log(userId);
+    const deletedUser = users.filter((user) => user.id !== userId);
+    setUsers(deletedUser);
+  };
+
   return (
     <main className="flex flex-col items-center">
       <h1 className="text-5xl text-gray-950">User Find Application</h1>
@@ -105,7 +112,12 @@ export default function Home() {
         })} */}
         {users?.map((user) => {
           return (
-            <UserCard userImg={user.imageUrl} firstName={user.firstName} />
+            <UserCard
+              userImg={user.imageUrl}
+              firstName={user.firstName}
+              userId={user.id}
+              deleteUser={deleteUser}
+            />
           );
         })}
         {!users && <p>Хоосон</p>}

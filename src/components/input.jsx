@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 
-const Input = ({ handleChange, clearValue }) => {
-  const [searchValue, setSearchValue] = useState("");
-
+const Input = ({ handleChange }) => {
   const changeValue = (e) => {
     handleChange(e.target.value);
   };
 
-  const handleClick = (e) => {
-    console.log("clicked");
-    // setSearchValue(value);
-  };
+  // const handleClick = (e) => {
+  // console.log("clicked");
+  // setSearchValue(value);
+  // };
   return (
     <div>
       <input
