@@ -1,6 +1,6 @@
 import Input from "@/components/input";
 import UserCard from "@/components/user-card";
-import { setupDevBundler } from "next/dist/server/lib/router-utils/setup-dev-bundler";
+
 import { useState } from "react";
 
 const profiles = [

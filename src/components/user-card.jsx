@@ -1,4 +1,3 @@
-import React from "react";
 import { MdOutlineClear } from "react-icons/md";
 
 const UserCard = ({ userImg, firstName, userId, deleteUser }) => {
